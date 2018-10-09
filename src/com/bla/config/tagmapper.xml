@@ -5,12 +5,6 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 <mapper namespace="com.bla.mapper.TagMapper">
 
 	<!-- Need a update -->
-	<resultMap type="moim" id="moimDetail">
-		<result column="tag_id" property="tag_id" />
-		<result column="tag_name" property="tag_name" />
-		<result column="auct_id" property="auct_id" />
-		
-	</resultMap>
 
 	<resultMap type="tag" id="tagList">
 		<result column="tag_id" property="tag_id" />
