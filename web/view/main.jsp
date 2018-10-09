@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <!-- Custom CSS -->
-<link rel="stylesheet" href="../css/style.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -31,7 +31,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"><img src="img/logo.PNG"></a>
+      <a class="navbar-brand" href="main.bla"><img src="img/logo.PNG"></a>
     </div>
     
     <div class="collapse navbar-collapse" id="myNavbar">     
@@ -56,7 +56,7 @@
     <!-- Menu Navigation -->
     <div class="col-sm-2 sidenav" id="menu">
       <div>
-      	<p><a href="#"><strong>전체 카테고리</strong></a></p>
+      	<p><a href="main.bla"><strong>전체 카테고리</strong></a></p>
       </div>
       <div id="menu_category">
 	    <p><a href="clothing.bla?category=0">의류/잡화</a></p>
