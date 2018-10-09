@@ -41,7 +41,9 @@
 	  </div>
 	  </form>
 
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" id="rightNav">
+      	<li><a href="#"><img src="img/auction.png"></img>경매등록</a></li>
+      	<li><a href="#"><img src="img/customer.png"></img>마이페이지</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
