@@ -11,8 +11,8 @@
 <body>
 
 <!-- Content -->
-	<div class="col-sm-8 text-left">
-	
+<div id="list_area">
+	<div class="col-sm-10 text-left">
 	<div class="card group" id="card_group">
 	  <div class="card" style="width: 18rem;">
 	  	<h5 class="card-title" id="time_limit">12:00:00</h5>
@@ -30,21 +30,8 @@
 		    <p class="card-text" id="auction_price">38</p>
 		  </div>
 	  </div>
-	  	  
-	 
 	</div>
-	
-
-
-<!-- Adds Navigation -->
-    <div class="col-sm-2 sidenav" style="display:none;">
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
-    </div>
+</div>
     
     <!-- Pagination -->
 	<div class="container" id="pagination_area">
@@ -73,6 +60,5 @@
 	    </li>
 	  </ul>
 	</div>
-
 </body>
 </html>
