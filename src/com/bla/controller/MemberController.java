@@ -73,7 +73,11 @@ public class MemberController {
 
 	@RequestMapping("/mypage.bla")
 	public ModelAndView mypage(HttpServletRequest request) {
-		return null;
+		//memeberid를 가져와서 회원 정보 select한 정보 mv.addObject로 추가
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("main");
+		mv.addObject("centerpage", "user/mypage");
+		return mv;
 	}
 	
 	@RequestMapping("/pwdupdateimpl.bla")
