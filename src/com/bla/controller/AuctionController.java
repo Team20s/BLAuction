@@ -23,7 +23,11 @@ public class AuctionController {
 	// 경매 등록 페이지 넘기기
 	@RequestMapping("/createAuction.bla")
 	public ModelAndView createAuction() {
-		return null;
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("main");
+		mv.addObject("centerpage","auction/register");
+		return mv;
 	}
 
 	// 경매 등록 실시
