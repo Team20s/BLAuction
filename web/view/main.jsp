@@ -59,12 +59,12 @@
       	<p><a href="#"><strong>전체 카테고리</strong></a></p>
       </div>
       <div id="menu_category">
-	    <p><a href="auction/category/clothing.jsp">의류/잡화</a></p>
-	    <p><a href="auction/category/beauty.jsp">뷰티/미용</a></p>
-	    <p><a href="auction/category/sports.jsp">스포츠/레저</a></p>
-	    <p><a href="auction/category/digital.jsp">디지털/가전</a></p>
-	    <p><a href="auction/category/furniture.jsp">생활/가구</a></p>
-	    <p><a href="auction/category/etc.jsp">기타</a></p>
+	    <p><a href="clothing.bla?category=0">의류/잡화</a></p>
+	    <p><a href="beauty.bla?category=1">뷰티/미용</a></p>
+	    <p><a href="sports.bla?category=2">스포츠/레저</a></p>
+	    <p><a href="digital.bla?category=3">디지털/가전</a></p>
+	    <p><a href="furniture.bla?category=4">생활/가구</a></p>
+	    <p><a href="etc.bla?category=5">기타</a></p>
       </div>
     </div>
     
