@@ -69,7 +69,6 @@ function makeAuction(){
 			alert(data)
 		}
 	})
-
 }
 
 /**
@@ -121,7 +120,6 @@ function set_auction(){
  * 4. biddingEvent를 통해서 입찰 성공 시 이벤트 처리
  */
 function bidding(price){
-	var bid_id /* DB에서 Sequence로 증가하는 값을 받아옴 */
 	var auction_id /* 쿠키에서 정보를 받아옴*/
 	var price = $("#price").val()
 	var time = new Date().getTime()
@@ -140,15 +138,17 @@ function bidding(price){
 		data:params,
 		datatype:'json',
 		success:function(data){
-			bid_id = data
-			auction.bidding.sendTransaction(bid_id, bidder_id, time, {from:client_address, value:web3.toWei(price, "finney")},  function(err, res){
-		        
-		    });
+			alert(data)
 		},
 		error:function(data){
 			alert(data)
 		}
 	})
+	
+	auction.bidding.sendTransaction(bidder_id, time, {from:client_address, value:web3.toWei(price, "finney")},  function(err, res){
+        console.log("bidding() : ")
+        console.log(res)
+    });
 }
 
 auction.makeBidEvent().watch(function(){
