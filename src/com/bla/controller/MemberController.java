@@ -16,7 +16,7 @@ import com.bla.vo.MemberVO;
 @Controller
 public class MemberController {
 
-	@Resource(name = "ubiz")
+	@Resource(name = "mbiz")
 	Biz<MemberVO, String> biz;
 
 	@RequestMapping("/main.bla")

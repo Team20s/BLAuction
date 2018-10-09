@@ -31,8 +31,13 @@
 		  </div>
 	  </div>
 	  
+	  
+	  
+	  
 	 
 	</div>
+	
+
 
 <!-- Adds Navigation -->
     <div class="col-sm-2 sidenav" style="display:none;">
