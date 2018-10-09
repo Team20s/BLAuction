@@ -42,7 +42,6 @@ public class AuctionController {
 	// 移댄뀒怨좊━ 蹂� 由ъ뒪�듃 �븿�닔/////////////////////////////////
 	@RequestMapping("/clothing.bla")
 	public ModelAndView clothing(HttpServletRequest request) {
-		System.out.println("clothing..");
 		String category = request.getParameter("category");
 		ArrayList<AuctionVO> list = null;
 
@@ -61,7 +60,7 @@ public class AuctionController {
 
 	@RequestMapping("/beauty.bla")
 	@ResponseBody
-	public ModelAndView fashionlist(HttpServletRequest request) {
+	public ModelAndView beauty(HttpServletRequest request) {
 		String category = request.getParameter("category");
 		ArrayList<AuctionVO> list = null;
 
@@ -81,7 +80,7 @@ public class AuctionController {
 
 	@RequestMapping("/sports.bla")
 	@ResponseBody
-	public ModelAndView sportslist(HttpServletRequest request) {
+	public ModelAndView sports(HttpServletRequest request) {
 		String category = request.getParameter("category");
 		ArrayList<AuctionVO> list = null;
 
@@ -101,7 +100,7 @@ public class AuctionController {
 
 	@RequestMapping("/digital.bla")
 	@ResponseBody
-	public ModelAndView digitallist(HttpServletRequest request) {
+	public ModelAndView digital(HttpServletRequest request) {
 		String category = request.getParameter("category");
 		ArrayList<AuctionVO> list = null;
 
@@ -121,7 +120,7 @@ public class AuctionController {
 
 	@RequestMapping("/furniture.bla")
 	@ResponseBody
-	public ModelAndView beautylist(HttpServletRequest request) {
+	public ModelAndView furniture(HttpServletRequest request) {
 		String category = request.getParameter("category");
 		ArrayList<AuctionVO> list = null;
 
@@ -141,7 +140,7 @@ public class AuctionController {
 
 	@RequestMapping("/etc.bla")
 	@ResponseBody
-	public ModelAndView etclist(HttpServletRequest request) {
+	public ModelAndView etc(HttpServletRequest request) {
 		String category = request.getParameter("category");
 		ArrayList<AuctionVO> list = null;
 

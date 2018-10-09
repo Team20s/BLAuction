@@ -23,7 +23,7 @@ public class MemberController {
 	public ModelAndView main() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
-		mv.addObject("centerpage", "main");
+		mv.addObject("centerpage", "center");
 		return mv;
 	}
 
