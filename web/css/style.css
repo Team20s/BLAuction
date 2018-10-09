@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+/* index.html */
+/*****************************************************************/
 .container{
 	weight:100%;
 	height:100%;
@@ -30,12 +32,181 @@
 		border:solid black 2px;
 	}
 }
+.container a:link {
+	 text-decoration:none; 
+	 color:white;
+}
+.container a:hover {
+	 text-decoration:none; 
+	 color:black;
+}
 #northArea{
 
 }
 #centerArea{
-	
+	width:100%;
+	margin:0 auto;
+}
+#title{
+	position:relative;
+}
+#title img{
+	display:block;
+	margin:6% auto;
+}
+#searchingbar{
+	position:relative;
+	margin:-3% auto;
+}
+#searchingbar input{
+	width:200%;
+	margin-left:-50%;
 }
 #southArea{
 
 }
+
+
+/* main.jsp */
+/*****************************************************************/
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      height:120px;
+      border-bottom:solid 1px #e3e3e3;
+    }
+    
+    .navbar img{
+    	margin-top:6%;
+    	margin-left:30%;
+    }
+    
+    #myNavbar{
+    	margin-top:2.5%;
+    }
+    
+    #searchingbar_main input{
+    	width:250%;
+    	margin-left:70%;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      border-right:solid 1px #e3e3e3;
+      height: 100%;
+    }
+    
+    #menu a{
+    	color:black;
+    }
+    
+    #menu a:link{
+    	text-decoration:none;
+    }
+    
+    #menu a:hover{
+    	color:gray;
+    }
+    
+    #menu div{
+    	border-bottom:solid 1px #e3e3e3;
+    }
+    
+    #menu_category{
+    	padding-top:10%;
+    	padding-bottom:10%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      color: gray;
+      padding: 15px;
+      border-top:solid 1px #e3e3e3;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+    	
+    	.navbar img{
+    	margin:6% auto;
+    	}
+    	
+    	#myNavbar{
+    	margin:0 auto;
+    }
+
+  		#searchingbar_main input{
+    	width:10%;
+    	margin:0 auto;
+    	}
+    	
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      
+      .row.content {height:auto;} 
+      
+      #menu_category{
+    	padding-top:3%;
+    	padding-bottom:3%;
+    	}
+      
+    }
+    
+    
+/* center.jsp */
+/*****************************************************************/
+	#card_group{
+		
+	}
+	
+	.card{
+		margin-top:2%;
+		margin-left:3%;
+		margin-bottom:4%;
+	}
+	
+    #time_limit{
+    	text-align:center;
+    	padding-bottom:1px;
+    }
+    
+    .card img{
+    	width:200px;
+    	height:180px;
+    }
+    
+    .card-body{
+    	margin-top:8%;
+    }
+    
+    .card-body p{
+    	display:inline;
+    }
+    
+    .card-body a{
+    	display:inline;
+    	color:black;
+    }
+    
+    .card-body a:link{
+    	text-decoration:none;
+    }
+    
+    .card-body a:hover{
+    	color:gray;
+    }
+    
+    #auction_name{
+    	float:left;
+    }
+    
+    #auction_price{
+    	float:right;
+    }
