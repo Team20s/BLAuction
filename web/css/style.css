@@ -210,3 +210,6 @@
     #auction_price{
     	float:right;
     }
+    
+    #pagination_area{
+    	margin-right:0;
