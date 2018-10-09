@@ -15,31 +15,41 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bla.frame.Biz;
 import com.bla.vo.AuctionVO;
 
-
 @Controller
 public class AuctionController {
 	@Resource(name = "mbiz")
 	Biz<AuctionVO, String> biz;
 
-	// 寃쎈ℓ �깮�꽦 �럹�씠吏� �씠�룞
+	// 경매 등록 페이지 넘기기
 	@RequestMapping("/createAuction.bla")
 	public ModelAndView createAuction() {
 		return null;
 	}
 
-	// 寃쎈ℓ �깮�꽦
+	// 경매 등록 실시
 	@RequestMapping("/createAuctionimpl.bla")
 	public String createAuctionimpl(AuctionVO auction, HttpServletRequest request) {
 		return null;
 	}
 
-	// 寃쎈ℓ �긽�꽭 �럹�씠吏�
-	@RequestMapping("/AuctionVOdetail.bla")
-	public ModelAndView Auctiondetail(HttpServletRequest request, Map<String, String> map) {
-		return null;
+	// 옥션 상세 페이지 넘기기
+	@RequestMapping("/auctiondetail.bla")
+	public ModelAndView auctiondetail(HttpServletRequest request, Map<String, String> map) {
+		String auctionId = request.getParameter("auctionid");// list로 받아온 객체의 auctionid를 저장시켜서 넘겨 받아서 select해온다.
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("main");
+		try {
+
+			mv.addObject("centerpage", "auction/detail");
+		} catch (Exception e) {
+			e.printStackTrace();
+			mv.addObject("centerpage", "auction/detail");
+		}
+		return mv;
 	}
 
-	// 移댄뀒怨좊━ 蹂� 由ъ뒪�듃 �븿�닔/////////////////////////////////
+	// 각종 카테고리 리스트 뿌려주기/////////////////////////////////
 	@RequestMapping("/clothing.bla")
 	public ModelAndView clothing(HttpServletRequest request) {
 		String category = request.getParameter("category");
@@ -59,7 +69,6 @@ public class AuctionController {
 	}
 
 	@RequestMapping("/beauty.bla")
-	@ResponseBody
 	public ModelAndView beauty(HttpServletRequest request) {
 		String category = request.getParameter("category");
 		ArrayList<AuctionVO> list = null;
@@ -68,7 +77,7 @@ public class AuctionController {
 		mv.setViewName("main");
 
 		try {
-			mv.addObject("list",list);
+			mv.addObject("list", list);
 			mv.addObject("centerpage", "auction/category/beauty");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -79,7 +88,6 @@ public class AuctionController {
 	}
 
 	@RequestMapping("/sports.bla")
-	@ResponseBody
 	public ModelAndView sports(HttpServletRequest request) {
 		String category = request.getParameter("category");
 		ArrayList<AuctionVO> list = null;
@@ -88,7 +96,7 @@ public class AuctionController {
 		mv.setViewName("main");
 
 		try {
-			mv.addObject("list",list);
+			mv.addObject("list", list);
 			mv.addObject("centerpage", "auction/category/sports");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -108,7 +116,7 @@ public class AuctionController {
 		mv.setViewName("main");
 
 		try {
-			mv.addObject("list",list);
+			mv.addObject("list", list);
 			mv.addObject("centerpage", "auction/category/digital");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -119,7 +127,6 @@ public class AuctionController {
 	}
 
 	@RequestMapping("/furniture.bla")
-	@ResponseBody
 	public ModelAndView furniture(HttpServletRequest request) {
 		String category = request.getParameter("category");
 		ArrayList<AuctionVO> list = null;
@@ -128,7 +135,7 @@ public class AuctionController {
 		mv.setViewName("main");
 
 		try {
-			mv.addObject("list",list);
+			mv.addObject("list", list);
 			mv.addObject("centerpage", "auction/category/furniture");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -139,7 +146,6 @@ public class AuctionController {
 	}
 
 	@RequestMapping("/etc.bla")
-	@ResponseBody
 	public ModelAndView etc(HttpServletRequest request) {
 		String category = request.getParameter("category");
 		ArrayList<AuctionVO> list = null;
@@ -148,7 +154,7 @@ public class AuctionController {
 		mv.setViewName("main");
 
 		try {
-			mv.addObject("list",list);
+			mv.addObject("list", list);
 			mv.addObject("centerpage", "auction/category/etc");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -158,75 +164,75 @@ public class AuctionController {
 		return mv;
 	}
 
-	// �엯李� �쟾 寃쎈ℓ瑜� 痍⑥냼�븷 �닔 �엳�뒗�뜲, auction_status瑜� 蹂�寃쏀븯湲� �쐞�븿.
-	@RequestMapping("/updateAuctionVOimpl.bla")
-	public ModelAndView updateAuctionVOimpl(AuctionVO auction, HttpServletRequest request) {
+	// 옥션 정보 수정하기 단, auction_status가 입찰 전일 경우에만!
+	@RequestMapping("/updateAuctionimpl.bla")
+	public ModelAndView updateAuctionimpl(AuctionVO auction, HttpServletRequest request) {
 		return null;
 	}
 
-	// �엯李곗쓣 �븷�븣 Bidding �뀒�씠釉붿뿉 INSERT
+	// 입찰할 때 Bidding 정보 INSERT
 	@RequestMapping("/biddingimpl.bla")
 	public String biddingimpl(HttpServletRequest request) {
 		return null;
 	}
 
-	// �궡媛� �엯李고븳 臾쇳뭹 由ъ뒪�듃瑜� SELECT
+	// 내가 입찰한 list SELECT
 	@RequestMapping("/mybiddinglist.bla")
 	public String mybiddinglist() {
 		return null;
 	}
 
-	// �궡媛� �삱由� 寃쎈ℓ 由ъ뒪�듃 SELECT
+	// 내가 올린 경매 리스트 SELECT
 	@RequestMapping("/myauctionlist.bla")
 	public String myauctionlist() {
 		return null;
 	}
 
-	// �궡媛� �굺李고븳 臾쇳뭹 由ъ뒪�듃 SELECT
+	// 내가 낙찰한 물품 리스트 SELECT
 	@RequestMapping("/mysuccessbidlist.bla")
 	public String mysuccessbidlist() {
 		return null;
 	}
 
-	// �궡媛� �굺李곕맟�쓣 �븣
+	// 낙찰 됬을 때 실행하는 함수
 	@RequestMapping("/successfulbiddingimpl.bla")
 	public String successfulbiddingimpl(HttpServletRequest request) {
 		return null;
 	}
 
-	// �뙋留ㅼ옄媛� �깮諛� �슫�넚�쓣 蹂대궡怨� �슫�넚�옣 踰덊샇瑜� �엯�젰�뻽�쓣 �븣 �떎�뻾�맖.
+	// 낙찰이 완료되고 물품을 보냈을 때 택배 운송장 번호를 입력.
 	@RequestMapping("/deliveryimpl.bla")
 	public String deliveryimpl() {
 		return null;
 	}
 
-	// 理쒓퀬 �엯李곗옄媛� 諛붽펷�쓣 寃쎌슦 �솚遺덊빐二쇰뒗 �븿�닔
+	// 최고 입찰자가 바꼈을 때 환불해 주기 위함
 	@RequestMapping("/failbiddingimpl.bla")
 	public String failbiddingimpl(HttpServletRequest request) {
 		return null;
 	}
 
-	// �뙋留ㅼ옄�쓽 �젙蹂� select
+	// 판매자 정보의 페이지 넘기기
 	@RequestMapping("/sellerinfo.bla")
 	public String sellerinfo(HttpServletResponse response) {
 		return null;
 	}
 
-	// �쉶�썝 �벑湲�?
+	// 회원 등급?
 	@RequestMapping("/rateimpl.bla")
 	public String rateimpl(HttpServletRequest request) {
 		return null;
 	}
 
-	// 寃쎈ℓ 李얜뒗 �븿�닔
+	// 검색창에서 검색한 결과를 내보내는 함수
 	@RequestMapping("/searchimpl.bla")
 	public String searchimpl(HttpServletRequest request) {
 		return null;
 	}
 
-	// �굺李� 寃�利�
+	// 마지막에 낙찰 되었을 때 점검하는 함수
 	@RequestMapping("/crosscheck.bla")
-	public String crosscheck() {// db �궡�슜怨� smartcontract log瑜� 鍮꾧탳
+	public String crosscheck() {// db의 정보와 smartcontract log를 비교
 		return null;
 	}
 
