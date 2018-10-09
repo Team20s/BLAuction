@@ -4,51 +4,52 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bla.mapper.SuccessfulBidMapper">
 
-	<!-- <resultMap type="moim" id="moimDetail">
-		<result column="moim_id" property="moimId" />
-		<result column="moim_img" property="moimImg" />
-		<result column="title" property="title" />
-		<result column="sdate" property="sDate" />
-		<result column="edate" property="eDate" />
-		<result column="stime" property="sTime" />
-		<result column="etime" property="eTime" />
-		<result column="reg_date" property="regDate" />
-		<result column="apply_sdate" property="applySDate" />
-		<result column="apply_edate" property="applyEDate" />
-		<result column="apply_stime" property="applySTime" />
-		<result column="apply_etime" property="applyETime" />
-		<result column="place" property="place" />
-		<result column="userid" property="userId"/>
-		<result column="category_kind" property="categoryKind" />
-		<result column="content" property="content" />
-		<result column="detail_img1" property="detailImg1" />
-		<result column="detail_img2" property="detailImg2" />
-		<result column="detail_img3" property="detailImg3" />
-		<result column="detail_img4" property="detailImg4" />
-		<result column="detail_img5" property="detailImg5" />
-		<result column="name" property="userName"/>
+	<!-- Need a update -->
+	<resultMap type="successfulbid" id="successDetail">
+		<result column="auct_id" property="auct_id" />
+		<result column="bid_id" property="bid_id" />
+		<result column="review" property="review" />
+		<result column="delivery_code" property="delivery_code" />
 	</resultMap>
 
-	<resultMap type="moim" id="moimList">
-		<result column="moim_id" property="moimId"/>
-		<result column="moim_img" property="moimImg" />
-		<result column="title" property="title" />
-		<result column="sdate" property="sDate" />
-		<result column="edate" property="eDate" />
-		<result column="category_kind" property="categoryKind" />
-	</resultMap> -->
+	<resultMap type="successfulbid" id="successList">
+		<result column="auct_id" property="auct_id" />
+		<result column="bid_id" property="bid_id" />
+		<result column="review" property="review" />
+		<result column="delivery_code" property="delivery_code" />
+	</resultMap>
 
-	<select id="select" parameterType="String" resultMap="moimDetail">
+	<select id="select" parameterType="String" resultMap="successDetail">
+		SELECT * FROM SUCCESSFUL_BID WHERE AUCT_ID = #{obj}
 	</select>
-	<select id="selectall" resultMap="moimList">
+	<select id="selectall" resultMap="successList">
+		SELECT * FROM SUCCESSFUL_BID ORDER BY AUCT_ID
 	</select>
-	<insert id="insert" parameterType="moim">
+	<insert id="insertBIDID" parameterType="successfulbid">
+		INSERT INTO SUCCESSFUL_BID (BID_ID) VALUES (#{bid_id})
 	</insert>
-	<!-- Need a update -->
-	<update id="update" parameterType="moim">
+	<insert id="insertREV" parameterType="successfulbid">
+		INSERT INTO SUCCESSFUL_BID (REVIEW) VALUES (#{review})
+	</insert>
+	<insert id="insertDELICODE" parameterType="successfulbid">
+		INSERT INTO SUCCESSFUL_BID(DELIVERY_CODE) VALUES (#{delivery_code})
+	</insert>
+	<!-- Need a delete -->
+	<update id="updateBIDID" parameterType="successfulbid">
+		UPDATE SUCCESSFUL_BID SET BID_ID = #{bid_id} DELIVERY_CODE = #{delivery_code}
 	</update>
+	<!-- Need a delete -->
+	<update id="updateREV" parameterType="successfulbid">
+		UPDATE SUCCESSFUL_BID SET REVIEW = #{review} DELIVERY_CODE = #{delivery_code}
+	</update>
+	<!-- Need a delete -->
+	<update id="updateDELICODE" parameterType="successfulbid">
+		UPDATE SUCCESSFUL_BID SET DELIVERY_CODE = #{delivery_code}
+	</update>
+
 	<!-- Need a update parameter add.. -->
 	<delete id="delete" parameterType="String">
+		DELETE * FROM SUCCESSFUL_BID WHERE AUCT_ID = #{obj}
 	</delete>
 
 </mapper>

@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.bla.vo.UserVO" alias="user"/>
+		<typeAlias type="com.bla.vo.MemberVO" alias="member"/>
 		<typeAlias type="com.bla.vo.AuctionVO" alias="auction"/>
 		<typeAlias type="com.bla.vo.BiddingVO" alias="bidding"/>
 		<typeAlias type="com.bla.vo.PhotoVO" alias="photo"/>
@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="com/bla/config/usermapper.xml"/>
+		<mapper resource="com/bla/config/membermapper.xml"/>
 		<mapper resource="com/bla/config/auctionmapper.xml"/>
 		<mapper resource="com/bla/config/biddingmapper.xml"/>
 		<mapper resource="com/bla/config/photomapper.xml"/>

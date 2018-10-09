@@ -5,19 +5,19 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Repository;
 
 import com.bla.frame.Biz;
-import com.bla.vo.UserVO;
+import com.bla.vo.MemberVO;
 
-@Repository("ubiz")
-public class UserBiz implements Biz<UserVO,Integer> {
+@Repository("mbiz")
+public class MemberBiz implements Biz<MemberVO,Integer> {
 
 	@Override
-	public void register(UserVO t) throws Exception {
+	public void register(MemberVO t) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void modify(UserVO t) throws Exception {
+	public void modify(MemberVO t) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
@@ -29,13 +29,13 @@ public class UserBiz implements Biz<UserVO,Integer> {
 	}
 
 	@Override
-	public UserVO get(Integer v) throws Exception {
+	public MemberVO get(Integer v) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList<UserVO> get() throws Exception {
+	public ArrayList<MemberVO> get() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}

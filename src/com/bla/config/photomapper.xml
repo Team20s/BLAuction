@@ -4,51 +4,48 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bla.mapper.PhotoMapper">
 
-	<!-- <resultMap type="moim" id="moimDetail">
-		<result column="moim_id" property="moimId" />
-		<result column="moim_img" property="moimImg" />
-		<result column="title" property="title" />
-		<result column="sdate" property="sDate" />
-		<result column="edate" property="eDate" />
-		<result column="stime" property="sTime" />
-		<result column="etime" property="eTime" />
-		<result column="reg_date" property="regDate" />
-		<result column="apply_sdate" property="applySDate" />
-		<result column="apply_edate" property="applyEDate" />
-		<result column="apply_stime" property="applySTime" />
-		<result column="apply_etime" property="applyETime" />
-		<result column="place" property="place" />
-		<result column="userid" property="userId"/>
-		<result column="category_kind" property="categoryKind" />
-		<result column="content" property="content" />
-		<result column="detail_img1" property="detailImg1" />
-		<result column="detail_img2" property="detailImg2" />
-		<result column="detail_img3" property="detailImg3" />
-		<result column="detail_img4" property="detailImg4" />
-		<result column="detail_img5" property="detailImg5" />
-		<result column="name" property="userName"/>
+	<!-- Need a update -->
+	<resultMap type="photo" id="photoDetail">
+		<result column="photo_id" property="photo_id" />
+		<result column="photo_name" property="photo_name" />
+		<result column="photo_path" property="photo_path" />
+		<result column="auct_id" property="auct_id" />
 	</resultMap>
 
-	<resultMap type="moim" id="moimList">
-		<result column="moim_id" property="moimId"/>
-		<result column="moim_img" property="moimImg" />
-		<result column="title" property="title" />
-		<result column="sdate" property="sDate" />
-		<result column="edate" property="eDate" />
-		<result column="category_kind" property="categoryKind" />
-	</resultMap> -->
+	<resultMap type="photo" id="photoList">
+		<result column="photo_id" property="photo_id" />
+		<result column="photo_name" property="photo_name" />
+		<result column="photo_path" property="photo_path" />
+		<result column="auct_id" property="auct_id" />
+	</resultMap>
 
-	<select id="select" parameterType="String" resultMap="moimDetail">
+	<select id="select" parameterType="String" resultMap="photoDetail">
+		SELECT * FROM PHOTO WHERE PHOTO_ID = #{PHOTO_ID}
 	</select>
-	<select id="selectall" resultMap="moimList">
+	<select id="selectall" resultMap="photoList">
+		SELECT * FROM PHOTO ORDER BY PHOTO_ID
 	</select>
-	<insert id="insert" parameterType="moim">
+	<insert id="insert" parameterType="photo">
+		INSERT INTO PHOTO 
+		(PHOTO_NAME,PHOTO_PATH,AUCT_ID)
+		VALUES (#{photo_name},#{photo_path},#{auct_id})
 	</insert>
-	<!-- Need a update -->
-	<update id="update" parameterType="moim">
+	<!-- Need a delete -->
+	<update id="updatePN" parameterType="photo">
+		UPATE PHOTO SET PHOTO_NAME = #{photo_name} WHERE PHOTO_ID #{photo_id}
 	</update>
+	<!-- Need a delete -->
+	<update id="updatePP" parameterType="photo">
+		UPATE PHOTO SET PHOTO_PATH = #{photo_path} WHERE PHOTO_ID #{photo_id}
+	</update>
+	<!-- Need a delete -->
+	<update id="updateAI" parameterType="photo">
+		UPATE PHOTO SET AUCT_ID = #{auct_id} WHERE PHOTO_ID #{photo_id}
+	</update>
+	
 	<!-- Need a update parameter add.. -->
 	<delete id="delete" parameterType="String">
+		DELETE * FROM PHOTO WHERE PHOTO_ID =#{obj}
 	</delete>
 
 </mapper>

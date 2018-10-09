@@ -2,32 +2,34 @@ package com.bla.vo;
 
 import java.util.Date;
 
-public class UserVO {
+public class MemberVO {
 	private int member_id;
 	private String email;
+	private String pw;
 	private String name;
 	private String address;
 	private String phone;
 	private Date birth;
 	private int score;
-	private int like;
+	private int likes;
 	private String member_account;
 	
-	public UserVO() {
+	public MemberVO() {
 		super();
 	}
 
-	public UserVO(int member_id, String email, String name, String address, String phone, Date birth, int score,
-			int like, String member_account) {
+	public MemberVO(int member_id, String email, String pw, String name, String address, String phone, Date birth, int score,
+			int likes, String member_account) {
 		super();
 		this.member_id = member_id;
 		this.email = email;
+		this.pw = pw;
 		this.name = name;
 		this.address = address;
 		this.phone = phone;
 		this.birth = birth;
 		this.score = score;
-		this.like = like;
+		this.likes = likes;
 		this.member_account = member_account;
 	}
 
@@ -37,6 +39,14 @@ public class UserVO {
 
 	public void setMember_id(int member_id) {
 		this.member_id = member_id;
+	}
+
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 
 	public String getEmail() {
@@ -87,12 +97,12 @@ public class UserVO {
 		this.score = score;
 	}
 
-	public int getLike() {
-		return like;
+	public int getLikes() {
+		return likes;
 	}
 
-	public void setLike(int like) {
-		this.like = like;
+	public void setLikes(int likes) {
+		this.likes = likes;
 	}
 
 	public String getMember_account() {
@@ -103,6 +113,7 @@ public class UserVO {
 		this.member_account = member_account;
 	}
 
+	//pw 추가 되어야 함!  추가 부탁드려요~~~
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -110,7 +121,7 @@ public class UserVO {
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + ((birth == null) ? 0 : birth.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + like;
+		result = prime * result + likes;
 		result = prime * result + ((member_account == null) ? 0 : member_account.hashCode());
 		result = prime * result + member_id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
@@ -127,7 +138,7 @@ public class UserVO {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		UserVO other = (UserVO) obj;
+		MemberVO other = (MemberVO) obj;
 		if (address == null) {
 			if (other.address != null)
 				return false;
@@ -143,7 +154,7 @@ public class UserVO {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (like != other.like)
+		if (likes != other.likes)
 			return false;
 		if (member_account == null) {
 			if (other.member_account != null)
@@ -169,9 +180,19 @@ public class UserVO {
 
 	@Override
 	public String toString() {
-		return "UserVO [member_id=" + member_id + ", email=" + email + ", name=" + name + ", address=" + address
-				+ ", phone=" + phone + ", birth=" + birth + ", score=" + score + ", like=" + like + ", member_account="
-				+ member_account + "]";
+		return "MemberVO [member_id=" + member_id + ", email=" + email + ", pw=" + pw + ", name=" + name + ", address="
+				+ address + ", phone=" + phone + ", birth=" + birth + ", score=" + score + ", likes=" + likes
+				+ ", member_account=" + member_account + ", getMember_id()=" + getMember_id() + ", getPw()=" + getPw()
+				+ ", getEmail()=" + getEmail() + ", getName()=" + getName() + ", getAddress()=" + getAddress()
+				+ ", getPhone()=" + getPhone() + ", getBirth()=" + getBirth() + ", getScore()=" + getScore()
+				+ ", getLikes()=" + getLikes() + ", getMember_account()=" + getMember_account() + ", hashCode()="
+				+ hashCode() + ", getClass()=" + getClass() + ", toString()=" + super.toString() + "]";
 	}
+
+	
+	
+	
+
+	
 		
 }

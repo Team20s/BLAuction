@@ -5,16 +5,16 @@ import java.util.Date;
 public class BiddingVO {
 
 	private int bid_id;
-	private int bidder_id;
+	private int member_id;
 	private int auct_id;
 	private long price;
 	private Date time;
 	private String bidder_account;
 	
-	public BiddingVO(int bid_id, int bidder_id, int auct_id, long price, Date time, String bidder_account) {
+	public BiddingVO(int bid_id, int member_id, int auct_id, long price, Date time, String bidder_account) {
 		super();
 		this.bid_id = bid_id;
-		this.bidder_id = bidder_id;
+		this.member_id = member_id;
 		this.auct_id = auct_id;
 		this.price = price;
 		this.time = time;
@@ -31,11 +31,11 @@ public class BiddingVO {
 	public void setBid_id(int bid_id) {
 		this.bid_id = bid_id;
 	}
-	public int getBidder_id() {
-		return bidder_id;
+	public int getMember_id() {
+		return member_id;
 	}
-	public void setBidder_id(int bidder_id) {
-		this.bidder_id = bidder_id;
+	public void setMember_id(int member_id) {
+		this.member_id = member_id;
 	}
 	public int getAuct_id() {
 		return auct_id;
@@ -63,7 +63,7 @@ public class BiddingVO {
 	}
 	@Override
 	public String toString() {
-		return "BiddingVO [bid_id=" + bid_id + ", bidder_id=" + bidder_id + ", auct_id=" + auct_id + ", price=" + price
+		return "BiddingVO [bid_id=" + bid_id + ", member_id=" + member_id + ", auct_id=" + auct_id + ", price=" + price
 				+ ", time=" + time + ", bidder_account=" + bidder_account + "]";
 	}
 	

@@ -4,51 +4,40 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bla.mapper.TagMapper">
 
-	<!-- <resultMap type="moim" id="moimDetail">
-		<result column="moim_id" property="moimId" />
-		<result column="moim_img" property="moimImg" />
-		<result column="title" property="title" />
-		<result column="sdate" property="sDate" />
-		<result column="edate" property="eDate" />
-		<result column="stime" property="sTime" />
-		<result column="etime" property="eTime" />
-		<result column="reg_date" property="regDate" />
-		<result column="apply_sdate" property="applySDate" />
-		<result column="apply_edate" property="applyEDate" />
-		<result column="apply_stime" property="applySTime" />
-		<result column="apply_etime" property="applyETime" />
-		<result column="place" property="place" />
-		<result column="userid" property="userId"/>
-		<result column="category_kind" property="categoryKind" />
-		<result column="content" property="content" />
-		<result column="detail_img1" property="detailImg1" />
-		<result column="detail_img2" property="detailImg2" />
-		<result column="detail_img3" property="detailImg3" />
-		<result column="detail_img4" property="detailImg4" />
-		<result column="detail_img5" property="detailImg5" />
-		<result column="name" property="userName"/>
+	<!-- Need a update -->
+	<resultMap type="moim" id="moimDetail">
+		<result column="tag_id" property="tag_id" />
+		<result column="tag_name" property="tag_name" />
+		<result column="auct_id" property="auct_id" />
+		
 	</resultMap>
 
-	<resultMap type="moim" id="moimList">
-		<result column="moim_id" property="moimId"/>
-		<result column="moim_img" property="moimImg" />
-		<result column="title" property="title" />
-		<result column="sdate" property="sDate" />
-		<result column="edate" property="eDate" />
-		<result column="category_kind" property="categoryKind" />
-	</resultMap> -->
+	<resultMap type="tag" id="tagList">
+		<result column="tag_id" property="tag_id" />
+		<result column="tag_name" property="tag_name" />
+		<result column="auct_id" property="auct_id" />
+		
+	</resultMap>
 
-	<select id="select" parameterType="String" resultMap="moimDetail">
+	<select id="select" parameterType="String" resultMap="tagDetail">
+		SELECT * FROM TAG WHERE TAG_ID = #{obj}
 	</select>
-	<select id="selectall" resultMap="moimList">
+	<select id="selectall" resultMap="tagList">
+		SELECT * FROM TAG ORDER BY TAG_ID
 	</select>
-	<insert id="insert" parameterType="moim">
+	<insert id="insert" parameterType="tag">
+		INSERT INTO TAG (AUCT_ID) VALUES (#{auct_id})
+	</insert>
+	<insert id="insertTAG" parameterType="tag">
+		INSERT INTO TAG (TAG_NAME) VALUES (#{tag_name})
 	</insert>
 	<!-- Need a update -->
-	<update id="update" parameterType="moim">
+	<update id="update" parameterType="tag">
+		 UPDATE TAG SET TAG_NAME = #{tag_name} WHERE TAG_ID = #{tag_id}
 	</update>
 	<!-- Need a update parameter add.. -->
 	<delete id="delete" parameterType="String">
+		DELETE * FROM TAG WHERE TAG_ID = #{obj}
 	</delete>
 
 </mapper>

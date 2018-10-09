@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bla.mapper.MemberMapper">
+
+	<!-- Need a update -->
+	<resultMap type="member" id="memberDetail">
+		<result column="member_id" property="member_id" />
+		<result column="email" property="email" />
+		<result column="pw" property="pw" />
+		<result column="name" property="name" />
+		<result column="address" property="address" />
+		<result column="phone" property="phone" />
+		<result column="birth" property="birth" />
+		<result column="score" property="score" />
+		<result column="likes" property="likes" />
+		<result column="member_account" property="member_account" />
+
+	</resultMap>
+
+	<resultMap type="member" id="memberList">
+		<result column="member_id" property="member_id" />
+		<result column="email" property="email" />
+		<result column="pw" property="pw" />
+		<result column="name" property="name" />
+		<result column="address" property="address" />
+		<result column="phone" property="phone" />
+		<result column="birth" property="birth" />
+		<result column="score" property="score" />
+		<result column="likes" property="likes" />
+		<result column="member_account" property="member_account" />
+
+	</resultMap> 
+
+	<select id="select" parameterType="String" resultMap="moimDetail">
+		SELECT * FROM MEMBER WHERE MEMBER_ID = #{obj}
+	</select>
+	<select id="selectall" resultMap="memberList">
+		SELECT * FROM MEMBER ORDER BY MEMBER_ID
+	</select>
+	<insert id="insertSCORE" parameterType="member">
+		INSERT INTO MEMBER (SCORE) VALUES (#{score})       
+	</insert>
+	<insert id="insertLIKES" parameterType="member">
+		INSERT INTO MEMBER (LIKES) VALUES (#{likes})       
+	</insert>
+	<insert id="insert" parameterType="member">
+		INSERT INTO MEMBER
+		(EMAIL,PW,NAME,ADDRESS,PHONE,BIRTH,MEMBER_ACCOUNT)
+		VALUES (#{email},#{pw},#{name},#{address},#{phone},#{birth},#{member_account})       
+	</insert>
+	<!-- Need a update, parameter -->
+	<update id="update" parameterType="member">
+		UPDATE MEMBER SET WHERE MEMBER_ID = #{member_id}
+	</update>
+	<!-- Need a update parameter add.. -->
+	<delete id="delete" parameterType="String">
+		DELETE * FROM MEMBER WHERE MEMBER_ID=#{obj}
+	</delete>
+
+</mapper>

@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bla.frame.Biz;
-import com.bla.vo.UserVO;
+import com.bla.vo.MemberVO;
 
 @Controller
-public class UserController {
+public class MemberController {
 
 	@Resource(name = "ubiz")
-	Biz<UserVO, String> biz;
+	Biz<MemberVO, String> biz;
 
 	@RequestMapping("/main.bla")
 	public ModelAndView main() {
@@ -37,34 +37,7 @@ public class UserController {
 
 	@RequestMapping("/loginimpl.bla")
 	public String loginimpl(HttpServletRequest request) {
-		String id = request.getParameter("id");
-		String pwd = request.getParameter("pwd");
-		String loginState = "0";
-
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("main");
-		UserVO user = null;
-		try {
-			/*user = service.get(id);
-			if (pwd.equals(user.getPwd())) {
-				HttpSession session = request.getSession();
-				session.setAttribute("userId", id);
-				System.out.println("login success!");
-				System.out.println("ID:" + id + "Pwd:" + pwd);
-				return "redirect:/main.bla"; 
-			} else {
-				request.setAttribute("loginState", loginState);
-				mv.addObject("centerpage", "user/login");
-				System.out.println("login failed...");
-				System.out.println("ID:" + id + "Pwd:" + pwd + "loginState:" + loginState);
-				return "redirect:/main.bla"; 
-			}*/
-			return null;
-		} catch (Exception e) {
-			e.printStackTrace();
-			request.setAttribute("loginState", loginState);
-			return "redirect:/main.bla"; 
-		}
+		return null;
 	}
 
 	@RequestMapping("/logout.bla")
@@ -77,7 +50,7 @@ public class UserController {
 
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
-		return "redirect:/main.bla"; 
+		return "redirect:/main.st"; 
 	}
 
 	@RequestMapping("/register.bla")
@@ -94,7 +67,7 @@ public class UserController {
 	}
 
 	@RequestMapping("/registerimpl.bla")
-	public ModelAndView registerimpl(HttpServletRequest request, UserVO user) {
+	public ModelAndView registerimpl(HttpServletRequest request, MemberVO user) {
 		return null;
 	}
 
@@ -104,7 +77,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/pwdupdateimpl.bla")
-	public ModelAndView pwdupdateimpl(HttpServletRequest request,UserVO user) {
+	public ModelAndView pwdupdateimpl(HttpServletRequest request,MemberVO user) {
 		return null;
 	}
 	

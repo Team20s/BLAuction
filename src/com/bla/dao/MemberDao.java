@@ -5,19 +5,19 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Repository;
 
 import com.bla.frame.Dao;
-import com.bla.vo.UserVO;
+import com.bla.vo.MemberVO;
 
-@Repository("udao")
-public class UserDao implements Dao<UserVO,Integer> {
+@Repository("mdao")
+public class MemberDao implements Dao<MemberVO,Integer> {
 
 	@Override
-	public void insert(UserVO t) throws Exception {
+	public void insert(MemberVO t) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void update(UserVO t) throws Exception {
+	public void update(MemberVO t) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
@@ -29,13 +29,13 @@ public class UserDao implements Dao<UserVO,Integer> {
 	}
 
 	@Override
-	public UserVO select(Integer v) throws Exception {
+	public MemberVO select(Integer v) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList<UserVO> select() throws Exception {
+	public ArrayList<MemberVO> select() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}

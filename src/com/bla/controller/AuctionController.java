@@ -1,15 +1,11 @@
 package com.bla.controller;
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,10 +22,7 @@ public class AuctionController {
 	//경매 생성 페이지 이동
 	@RequestMapping("/createAuction.bla")
 	public ModelAndView createAuction() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("main");
-		mv.addObject("centerpage", "auction/register");
-		return mv;
+		return null;
 	}
 	
 	// 경매 생성
@@ -41,48 +34,13 @@ public class AuctionController {
 	//경매 상세 페이지
 	@RequestMapping("/AuctionVOdetail.bla")
 	public ModelAndView Auctiondetail(HttpServletRequest request,Map<String, String> map) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("main");
-		mv.addObject("centerpage", "auction/detail");
-		return mv;
+		return null;
 	}
 	
 	//카테고리 별 리스트 함수/////////////////////////////////
 	@RequestMapping("/lifelist.bla")
 	@ResponseBody
 	public void lifelist(HttpServletResponse response) {
-		//카테고리 구분 객체 하기.				
-				ArrayList<AuctionVO> studyList = null;
-				
-				//JSON과 AJAX data 넘겨주기
-				response.setContentType("text/json;charset=utf-8");
-				PrintWriter out = null;
-				try {
-					out = response.getWriter();
-					//Data : from DB
-					//studyList = search.search("c2");
-					JSONObject jo = null;
-					JSONArray js = new JSONArray();
-					
-					for(int i=0;i<4;i++) {
-						jo = new JSONObject();
-						/*jo.put("moimId", studyList.get(i).getMoimId());
-						jo.put("moimImg", studyList.get(i).getMoimImg());
-						jo.put("title", studyList.get(i).getTitle());
-						jo.put("sdate", studyList.get(i).getsDate());
-						jo.put("edate", studyList.get(i).geteDate());
-						jo.put("categoryKind", studyList.get(i).getCategoryKind());*/
-						js.add(jo);
-					}
-					
-					out.print(js.toJSONString());
-					
-				} catch (Exception e) {
-					e.printStackTrace();		
-				}
-				
-				
-				out.close();
 	}
 	
 	@RequestMapping("/fashionlist.bla")
@@ -175,7 +133,7 @@ public class AuctionController {
 	public String searchimpl(HttpServletRequest request) {
 		return null;
 	}
-	 
+	
 	//낙찰 검증
 	@RequestMapping("/crosscheck.bla")
 	public String crosscheck() {//db 내용과 smartcontract log를 비교

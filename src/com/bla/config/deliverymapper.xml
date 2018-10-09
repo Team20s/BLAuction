@@ -4,51 +4,42 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bla.mapper.DeliveryMapper">
 
-	<!-- <resultMap type="moim" id="moimDetail">
-		<result column="moim_id" property="moimId" />
-		<result column="moim_img" property="moimImg" />
-		<result column="title" property="title" />
-		<result column="sdate" property="sDate" />
-		<result column="edate" property="eDate" />
-		<result column="stime" property="sTime" />
-		<result column="etime" property="eTime" />
-		<result column="reg_date" property="regDate" />
-		<result column="apply_sdate" property="applySDate" />
-		<result column="apply_edate" property="applyEDate" />
-		<result column="apply_stime" property="applySTime" />
-		<result column="apply_etime" property="applyETime" />
-		<result column="place" property="place" />
-		<result column="userid" property="userId"/>
-		<result column="category_kind" property="categoryKind" />
-		<result column="content" property="content" />
-		<result column="detail_img1" property="detailImg1" />
-		<result column="detail_img2" property="detailImg2" />
-		<result column="detail_img3" property="detailImg3" />
-		<result column="detail_img4" property="detailImg4" />
-		<result column="detail_img5" property="detailImg5" />
-		<result column="name" property="userName"/>
+	<!-- Need a update -->
+	<resultMap type="delivery" id="deliverDetail">
+		<result column="delivery_code" property="delivery_code" />
+		<result column="delivery_status" property="delivery_status" />
+		<result column="payment_status" property="payment_status" />
+	
 	</resultMap>
 
-	<resultMap type="moim" id="moimList">
-		<result column="moim_id" property="moimId"/>
-		<result column="moim_img" property="moimImg" />
-		<result column="title" property="title" />
-		<result column="sdate" property="sDate" />
-		<result column="edate" property="eDate" />
-		<result column="category_kind" property="categoryKind" />
-	</resultMap> -->
+	<resultMap type="delivery" id="deliverList">
+		<result column="delivery_code" property="delivery_code" />
+		<result column="delivery_status" property="delivery_status" />
+		<result column="payment_status" property="payment_status" />
+	
+	</resultMap>
 
-	<select id="select" parameterType="String" resultMap="moimDetail">
+	<select id="select" parameterType="String" resultMap="deliverDetail">
+		SELECT * FROM WHERE DELIVERY_CODE = #{obj}
 	</select>
-	<select id="selectall" resultMap="moimList">
+	<select id="selectall" resultMap="deliverList">
+		SELECT * FROM ORDER BY DELIVERY_CODE
 	</select>
-	<insert id="insert" parameterType="moim">
+	<insert id="insert" parameterType="delivery">
+		INSERT INTO DELIVERY(DELIVERY_STATUS,PAYMENT_STATUS)
+		VALUES (#{delivery_status},#{payment_status})
 	</insert>
 	<!-- Need a update -->
-	<update id="update" parameterType="moim">
+	<update id="updateDS" parameterType="delivery">
+		UDPATE DELIVERY SET DELIVERY_STATUS = #{delivery_status} WHERE DELIVER_CODE = #{deliver_code}
+	</update>
+	<!-- Need a update -->
+	<update id="updatePS" parameterType="delivery">
+		UDPATE DELIVERY SET PAYMENT_STATUS =#{payment_status} WHERE DELIVER_CODE = #{deliver_code}
 	</update>
 	<!-- Need a update parameter add.. -->
 	<delete id="delete" parameterType="String">
+		DELETE * FROM DELIVERY WHERE DELIVERY_CODE = #{obj}
 	</delete>
 
 </mapper>
