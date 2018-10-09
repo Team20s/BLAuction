@@ -16,17 +16,17 @@
 	<div class="card group" id="card_group">
 	  <div class="card" style="width: 18rem;">
 	  	<h5 class="card-title" id="time_limit">12:00:00</h5>
-		  <a href="auction/detail.jsp"><img class="card-img-top" src="img/se.jpg" alt="Card image cap"></a>
+		  <a href="auctiondetail.bla?auctionid=auctionid"><img class="card-img-top" src="img/se.jpg" alt="Card image cap"></a>
 		  <div class="card-body">
-		    <a href="auction/detail.jsp" class="card-text" id="auction_name">iPhone SE(rose gold)</a>
+		    <a href="auctiondetail.bla?auctionid=auctionid" class="card-text" id="auction_name">iPhone SE(rose gold)</a>
 		    <p class="card-text" id="auction_price">38</p>
 		  </div>
 	  </div>
 	  <div class="card" style="width: 18rem;">
 	  	<h5 class="card-title" id="time_limit">12:00:00</h5>
-		  <a href="auction/detail.jsp"><img class="card-img-top" src="img/se.jpg" alt="Card image cap"></a>
+		  <a href="auctiondetail.bla?auctionid=auctionid"><img class="card-img-top" src="img/se.jpg" alt="Card image cap"></a>
 		  <div class="card-body">
-		    <a href="auction/detail.jsp" class="card-text" id="auction_name">iPhone SE(rose gold)</a>
+		    <a href="auctiondetail.bla?auctionid=auctionid" class="card-text" id="auction_name">iPhone SE(rose gold)</a>
 		    <p class="card-text" id="auction_price">38</p>
 		  </div>
 	  </div>
