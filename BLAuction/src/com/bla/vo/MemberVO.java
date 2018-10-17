@@ -1,5 +1,7 @@
 package com.bla.vo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MemberVO {
@@ -9,7 +11,7 @@ public class MemberVO {
 	private String name;
 	private String address;
 	private String phone;
-	private Date birth;
+	private String birth;
 	private int score;
 	private int likes;
 	private String member_account;
@@ -18,7 +20,7 @@ public class MemberVO {
 		super();
 	}
 
-	public MemberVO(int member_id, String email, String pw, String name, String address, String phone, Date birth, int score,
+	public MemberVO(int member_id, String email, String pw, String name, String address, String phone, String birth, int score,
 			int likes, String member_account) {
 		super();
 		this.member_id = member_id;
@@ -81,12 +83,12 @@ public class MemberVO {
 		this.phone = phone;
 	}
 
-	public Date getBirth() {
+	public String getBirth() {
 		return birth;
 	}
 
-	public void setBirth(Date birth) {
-		this.birth = birth;
+	public void setBirth(String birth) {
+			this.birth = birth;
 	}
 
 	public int getScore() {

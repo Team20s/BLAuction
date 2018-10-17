@@ -21,6 +21,14 @@ likes   number(4) default 0,
 member_account   varchar2(160) not null
 );
 
+DROP SEQUENCE MEMBER_ID_SEQ;
+
+-- 5개의 값 미리 넣어둘 경우 START WIT 6
+CREATE SEQUENCE MEMBER_ID_SEQ START WITH 6 NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
+
+alter table	MEMBER modify(birth varchar2(30));
+
 create table CATEGORY_TYPE(
 cate_type_id number(5) not null PRIMARY KEY,
 cate_type_name varchar2(20) not null

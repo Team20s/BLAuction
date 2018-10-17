@@ -3,8 +3,8 @@
 PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bla.mapper.MemberMapper">
-	<select id="select" parameterType="Integer" resultType="member">
-		SELECT * FROM MEMBER WHERE MEMBER_ID = #{member_id}
+	<select id="select" parameterType="String" resultType="member">
+		SELECT * FROM MEMBER WHERE EMAIL = #{email}
 	</select>
 	
 	<select id="selectall" resultType="member">
@@ -13,8 +13,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	
 	<insert id="insert" parameterType="member">
 		INSERT INTO MEMBER
-		(EMAIL,PW,NAME,ADDRESS,PHONE,BIRTH,MEMBER_ACCOUNT)
-		VALUES (#{email},#{pw},#{name},#{address},#{phone},#{birth},#{member_account})       
+		VALUES (MEMBER_ID_SEQ.NEXTVAL, #{email},#{pw},#{name},#{address},#{phone},#{birth},0, 0, #{member_account})       
 	</insert>
 	
 	<update id="updatePw" parameterType="member">

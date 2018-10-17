@@ -8,7 +8,7 @@ import com.bla.vo.MemberVO;
 
 @Repository("mmapper")
 public interface MemberMapper {
-	public MemberVO select(Integer member_id);
+	public MemberVO select(String member_id);
 	public ArrayList<MemberVO> selectAll();
 	public void insert(MemberVO obj);
 	public void updatePw(MemberVO obj);

@@ -1,0 +1,12 @@
+select * from MEMBER;
+
+delete from MEMBER where MEMBER_ID = 6;
+
+
+DROP SEQUENCE MEMBER_ID_SEQ;
+
+CREATE SEQUENCE MEMBER_ID_SEQ START WITH 6 NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
+
+
+alter table	MEMBER modify(birth varchar2(30));
